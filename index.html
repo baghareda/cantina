@@ -7,16 +7,272 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-green-50 text-gray-800">
     <header class="p-4 flex items-center justify-between bg-white border-b border-gray-200">
         <h1 class="text-3xl font-bold text-green-800">YouCode Cantina</h1>
         <p class="text-sm text-gray-500">Your DailyMeal PLanner</p>
     </header>
 
     <main class="p-6">
-        <section class="mb-6">
-            <h2 class="text-2xl font-bold text-green-900">Plan Your Meals</h2>
-            <p class="mt-2 text-gray-600">Organize your weekly menu and control your budget</p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <section class="lg:col-span-2">
+                <h2 class="text-2xl font-bold text-green-900">Plan Your Meals</h2>
+                <p class="mt-2 text-gray-600">Organize your weekly menu and control your budget</p>
+            </section>
+
+    <section class="bg-white border border-green-100 rounded-xl p-5 shadow-sm">
+        <h2 class="text-lg font-bold text-green-900">Weekly Budget</h2>
+        <p class="text-sm text-gray-500 mt-1">Your planned food expenses</p>
+
+        <p class="text-3xl font-bold text-green-700 mt-4">0 DH</p>
+        <p class="text-sm text-gray-500">Total planned cost</p>
+    </section>
+
+</div>
+
+
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-green-900">Recipe Bank</h2>
+            <p class="mt-1 text-sm text-gray-600">Explore recipes for your weekly menu.</p> 
+            <div class="flex gap-3 mt-4">
+                <button class="px-4 py-2 bg-green-700 text-white rounded-lg">
+                    Entrée
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Soup</h3>
+                    <img src="images/entree1.jpeg" alt="Moroccan soup" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">12 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Taktouka</h3>
+                    <img src="images/entree2.jpeg" alt="Moroccan-taktouka" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">15 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Zalouk</h3>
+                    <img src="images/entree3.jpeg" alt="Moroccan-zalouk" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">13 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan salade</h3>
+                    <img src="images/moroccan-tomato-and-cucumber-salad.jpg" alt="Moroccan salade" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">10 DH</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="plat-principal">
+                        <div class="flex gap-3 mt-4">
+                <button class="px-4 py-2 bg-green-700 text-white rounded-lg">
+                    Plat principal
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Soup</h3>
+                    <img src="images/lunch1.jpeg" alt="Moroccan soup" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">12 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Taktouka</h3>
+                    <img src="images/lunch2.jpeg" alt="Moroccan-taktouka" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">15 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Zalouk</h3>
+                    <img src="images/lunch3.jpeg" alt="Moroccan-zalouk" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">13 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan salade</h3>
+                    <img src="images/moroccan-tomato-and-cucumber-salad.jpg" alt="Moroccan salade" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">10 DH</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="plat-principal">
+                        <div class="flex gap-3 mt-4">
+                <button class="px-4 py-2 bg-green-700 text-white rounded-lg">
+                    Dessert
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Soup</h3>
+                    <img src="images/dessert1.jpeg" alt="Moroccan soup" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">12 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Taktouka</h3>
+                    <img src="images/dessert2.jpeg" alt="Moroccan-taktouka" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">15 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan Zalouk</h3>
+                    <img src="images/dessert3.jpeg" alt="Moroccan-zalouk" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">13 DH</p>
+                </div>
+
+                <div class="mt-5 max-w-xs bg-white p-4 rounded-xl border border-green-100">
+                    <h3 class="font-bold text-green-900">Moroccan salade</h3>
+                    <img src="images/moroccan-tomato-and-cucumber-salad.jpg" alt="Moroccan salade" class="w-full h-40 object-cover rounded-lg mt-3">
+                    <p class="mt-3 text-green-800 font-semibold">10 DH</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-green-900">Weekly Meal Planner</h2>
+            <p class="mt-1 text-sm text-gray-600">
+                Organize your meals for each day of the week.
+            </p>
+
+            <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
+                <h3 class="text-lg font-bold text-green-900">Lundi</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Entrée</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Plat principal</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Dessert</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
+                <h3 class="text-lg font-bold text-green-900">Mardi</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Entrée</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Plat principal</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Dessert</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
+                <h3 class="text-lg font-bold text-green-900">Mercredi</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Entrée</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Plat principal</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Dessert</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
+                <h3 class="text-lg font-bold text-green-900">Jeudi</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Entrée</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Plat principal</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Dessert</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
+                <h3 class="text-lg font-bold text-green-900">Vendredi</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Entrée</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Plat principal</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                    <div class="bg-green-50 border border-green-100 rounded-lg p-3">
+                        <h4 class="font-semibold text-green-800">Dessert</h4>
+                        <p class="text-sm text-gray-500 mt-2">No recipe selected</p>
+                        <button class="mt-3 w-full rounded-lg border border-green-300 px-3 py-2 text-sm font-medium text-green-800 hover:bg-green-100">
+                            + Add recipe
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 </body>
