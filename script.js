@@ -8,6 +8,7 @@ let popuprecipes = document.querySelector("#pop-up-recepies")
 let modayentreeselction = document.querySelector("#monday-entree-selected") 
 let mondayplat = document.querySelector("#monday-plat")
 let platra2issi = document.querySelector("#plat-raissi")
+let mondayplatselection = document.querySelector("#monday-plat-principal")
 
 entreeButton.addEventListener("click", function ()
 {
@@ -30,7 +31,27 @@ entreeButton.addEventListener("click", function ()
             popup.classList.add("hidden")
         });
     }
-    
+});
+
+mondayplat.addEventListener("click", function()
+{
+    popuprecipes.innerHTML = ""
+    popup.classList.remove("hidden")
+    popuptitile.textContent = "select your meal"
+    platra2issi.querySelectorAll("div")
+    let wajabat = platra2issi.querySelectorAll("div")
+    for (let wajba of wajabat)
+    {
+        let copy = wajba.cloneNode(true)
+        popuprecipes.appendChild(copy)
+        copy.addEventListener("click", function()
+        {
+            let principalchoice = copy.querySelector("h3").textContent
+            mondayplatselection.textContent = principalchoice
+            popup.classList.add("hidden")
+        });
+    }
+
 });
 
 closingButton.addEventListener("click", function()
