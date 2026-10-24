@@ -1,4 +1,4 @@
-let entreeButton = document.querySelector("#monday-entree");
+let entreeButton = document.querySelectorAll(".entree-button");
 let popup = document.querySelector("#pop-up")
 let closingButton =document.querySelector("#closing-button")
 let popuptitile = document.querySelector("#pop-up-title")
@@ -9,50 +9,89 @@ let modayentreeselction = document.querySelector("#monday-entree-selected")
 let mondayplat = document.querySelector("#monday-plat")
 let platra2issi = document.querySelector("#plat-raissi")
 let mondayplatselection = document.querySelector("#monday-plat-principal")
+let mondaydessert = document.querySelector("#monday-dessert-button")
+let mondaypara = document.querySelector("#monday-dessert")
+let ga3dissir = document.querySelector("#dissir")
+let platButton = document.querySelectorAll(".plat-button");
+let dessertbutton = document.querySelectorAll(".dessertbutton")
 
-entreeButton.addEventListener("click", function ()
+for (let button of entreeButton)
 {
-    console.log("monday entree clikced");
+   button.addEventListener("click", function ()
+   {
+        console.log("monday entree clikced");
     popup.classList.remove("hidden")
     popuptitile.textContent = "select your meal"
     entreerecipe.querySelectorAll("div")
     console.log(entreerecipe.querySelectorAll("div").length)
     popuprecipes.innerHTML = ""
 
-    let meals = entreerecipe.querySelectorAll("div")
-    for (let meal of meals) 
-    {
-        let mealCopy = meal.cloneNode(true)
-        popuprecipes.appendChild(mealCopy)
-        mealCopy.addEventListener("click", function()
+        let meals = entreerecipe.querySelectorAll("div")
+        for (let meal of meals) 
         {
-            let selectechoice = mealCopy.querySelector("h3").textContent
-            modayentreeselction.textContent = selectechoice
-            popup.classList.add("hidden")
-        });
-    }
-});
+            let mealCopy = meal.cloneNode(true)
+            popuprecipes.appendChild(mealCopy)
+            mealCopy.addEventListener("click", function()
+            {
+                let selectechoice = mealCopy.querySelector("h3").textContent
+                let selectedParagraph = button.parentElement.querySelector("p");
+                selectedParagraph.textContent = selectechoice;
+                popup.classList.add("hidden")
+            });
+        }
+    }); 
+}
 
-mondayplat.addEventListener("click", function()
+for (let button of platButton)
 {
-    popuprecipes.innerHTML = ""
-    popup.classList.remove("hidden")
-    popuptitile.textContent = "select your meal"
-    platra2issi.querySelectorAll("div")
-    let wajabat = platra2issi.querySelectorAll("div")
-    for (let wajba of wajabat)
+    button.addEventListener("click", function()
     {
-        let copy = wajba.cloneNode(true)
-        popuprecipes.appendChild(copy)
-        copy.addEventListener("click", function()
+        popuprecipes.innerHTML = ""
+        popup.classList.remove("hidden")
+        popuptitile.textContent = "select your meal"
+        platra2issi.querySelectorAll("div")
+        let wajabat = platra2issi.querySelectorAll("div")
+        for (let wajba of wajabat)
         {
-            let principalchoice = copy.querySelector("h3").textContent
-            mondayplatselection.textContent = principalchoice
-            popup.classList.add("hidden")
-        });
-    }
+            let copy = wajba.cloneNode(true)
+            popuprecipes.appendChild(copy)
+            copy.addEventListener("click", function()
+            {
+                let principalchoice = copy.querySelector("h3").textContent
+                let selectedParagraph = button.parentElement.querySelector("p");
+                selectedParagraph.textContent = principalchoice;
+                popup.classList.add("hidden")
+            });
+        }
 
-});
+    });
+}
+
+
+for (let button of dessertbutton)
+{
+    button.addEventListener("click", function()
+    {
+        popuprecipes.innerHTML = ""
+        popup.classList.remove("hidden")
+        popuptitile.textContent = "select your meal"
+        ga3dissir.querySelectorAll("div")
+        let fruit = ga3dissir.querySelectorAll("div")
+        for (let frwi of fruit)
+            {
+                let cpy = frwi.cloneNode(true)
+                popuprecipes.appendChild(cpy)
+                cpy.addEventListener("click", function ()
+                {
+                    let urchoice = cpy.querySelector("h3").textContent
+                    let selectedParagraph = button.parentElement.querySelector("p");
+                    selectedParagraph.textContent = urchoice;
+                    popup.classList.add("hidden")
+                });
+            }
+        });
+}
+
 
 closingButton.addEventListener("click", function()
 {
