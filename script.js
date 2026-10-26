@@ -1,162 +1,95 @@
-let entreeButton = document.querySelectorAll(".entree-button");
-let popup = document.querySelector("#pop-up")
-let closingButton =document.querySelector("#closing-button")
-let popuptitile = document.querySelector("#pop-up-title")
-let recipebutton = document.querySelector("#recipe-choice")
-let popuprecipes = document.querySelector("#pop-up-recepies")
-let platButton = document.querySelectorAll(".plat-button");
-let dessertbutton = document.querySelectorAll(".dessertbutton")
-let dailyBudget = document.querySelector("#daily-budget");
 
-for (let button of entreeButton)
+let popup = document.querySelector("#pop-up");
+let title = document.querySelector("#pop-up-title");
+let choices = document.querySelector("#pop-up-recepies");
+let close = document.querySelector("#closing-button");
+let budget = document.querySelector("#daily-budget");
+let weeklybudhet = document.querySelector("#weekly-budget");
+
+function openPopup(button, bank, category)
 {
-   button.addEventListener("click", function ()
-   {
-        console.log("monday entree clikced");
-    popup.classList.remove("hidden")
-    popuptitile.textContent = "select your meal"
-    entreerecipe.querySelectorAll("div")
-    console.log(entreerecipe.querySelectorAll("div").length)
-    popuprecipes.innerHTML = ""
+    popup.classList.remove("hidden");
+    title.textContent = "Choose " + category;
+    choices.innerHTML = "";
 
-        let meals = entreerecipe.querySelectorAll("div")
-        for (let meal of meals) 
+    for (let meal of bank.children)
+    {
+        let choice = document.createElement("button");
+        let name = meal.querySelector("h3").textContent;
+        let price = parseInt(meal.querySelector("p").textContent);
+
+        choice.textContent = name + " — " + price + " DH";
+        choice.classList.add("block", "w-full", "text-left", "p-3",
+            "mb-2", "rounded-lg", "border", "border-green-200",
+            "hover:bg-green-50");
+
+        choices.appendChild(choice);
+
+        choice.addEventListener("click", function()
         {
-            let mealCopy = meal.cloneNode(true)
-            popuprecipes.appendChild(mealCopy)
-            mealCopy.addEventListener("click", function()
+            let slot = button.parentElement;
+            let selected = slot.querySelector("p");
+            let day = slot.parentElement.parentElement;
+            let total = 0;
+            
+            for (let box of day.querySelectorAll(".bg-green-50"))
             {
-                let selectechoice = mealCopy.querySelector("h3").textContent
-                let selectedPrice = parseInt(mealCopy.querySelector("p").textContent);
-                let selectedParagraph = button.parentElement.querySelector("p");
-                let oldPrice = Number(selectedParagraph.dataset.price || 0);
-                let proposedTotal = 0;
-                let dayCard = button.parentElement.parentElement;
-                let slots = dayCard.querySelectorAll(".bg-green-50");
+                let meal = box.querySelector("p");
+                total += Number(meal.dataset.price || 0);
+            }
 
-                for (let slot of slots)
-                {
-                    let price = Number(slot.querySelector("p").dataset.price || 0);
-                    proposedTotal = proposedTotal + price;
-                }
+            total = total - Number(selected.dataset.price || 0) + price;
 
-                proposedTotal = proposedTotal - oldPrice + selectedPrice;
-                if (proposedTotal > 50)
-                {
-                    alert("Your daily budget cannot exceed 50 DH!");
-                    return;
-                }
-                dailyBudget.textContent = proposedTotal + " / 50 DH";
-                popup.classList.add("hidden")
-                selectedParagraph.textContent = selectechoice + " - " + selectedPrice + " DH";
-                selectedParagraph.dataset.price = selectedPrice;
-            });
-        }
-    }); 
+            if (total > 50)
+            {
+                alert("Daily budget cannot exceed 50 DH!");
+                return;
+            }
+
+            let weeklytotal = 0;
+            let slots = document.querySelectorAll("#weekly-planer .bg-green-50");
+
+            for (let box of slots)
+            {
+                let meal = box.querySelector("p");
+                weeklytotal += Number(meal.dataset.price || 0);
+            }
+
+            weeklytotal = weeklytotal - Number(selected.dataset.price || 0) + price;
+
+            selected.textContent = name + " - " + price + " DH";
+            selected.dataset.price = price;
+            weeklybudhet.textContent = weeklytotal + " / 250 dh"
+            popup.classList.add("hidden");
+        });
+    }
 }
 
-for (let button of platButton)
+for (let button of document.querySelectorAll(".entree-button"))
 {
     button.addEventListener("click", function()
     {
-        popuprecipes.innerHTML = ""
-        popup.classList.remove("hidden")
-        popuptitile.textContent = "select your meal"
-        platra2issi.querySelectorAll("div")
-        let wajabat = platra2issi.querySelectorAll("div")
-        for (let wajba of wajabat)
-        {
-            let copy = wajba.cloneNode(true)
-            popuprecipes.appendChild(copy)
-            copy.addEventListener("click", function()
-            {
-                let principalchoice = copy.querySelector("h3").textContent
-                let selectedPrice = parseInt(copy.querySelector("p").textContent);
-                let selectedParagraph = button.parentElement.querySelector("p");
-                let oldPrice = Number(selectedParagraph.dataset.price || 0);
-                let dayCard = button.parentElement.parentElement;
-                let slots = dayCard.querySelectorAll(".bg-green-50");
-                let proposedTotal = 0;
-
-                for (let slot of slots)
-                {
-                    let price = Number(slot.querySelector("p").dataset.price || 0);
-                    proposedTotal = proposedTotal + price;
-                }
-                proposedTotal = proposedTotal - oldPrice + selectedPrice;
-                if (proposedTotal > 50)
-                {
-                    alert("Your daily budget cannot exceed 50 DH!");
-                    return;
-                }
-                selectedParagraph.textContent = principalchoice + " - " + selectedPrice + " DH";
-                selectedParagraph.dataset.price = selectedPrice;
-                dailyBudget.textContent = proposedTotal + " / 50 DH";
-                popup.classList.add("hidden")
-            });
-        }
-
+        openPopup(button, document.querySelector("#entree-recipes"), "Entrée");
     });
 }
 
-
-for (let button of dessertbutton)
+for (let button of document.querySelectorAll(".plat-button"))
 {
     button.addEventListener("click", function()
     {
-        popuprecipes.innerHTML = "";
-        popup.classList.remove("hidden");
-        popuptitile.textContent = "select your meal";
-
-        let fruit = ga3dissir.querySelectorAll("div");
-
-        for (let frwi of fruit)
-        {
-            let cpy = frwi.cloneNode(true);
-            popuprecipes.appendChild(cpy);
-
-            cpy.addEventListener("click", function()
-            {
-                let urchoice = cpy.querySelector("h3").textContent;
-                let selectedPrice = parseInt(cpy.querySelector("p").textContent);
-                let selectedParagraph = button.parentElement.querySelector("p");
-
-                let oldPrice = Number(selectedParagraph.dataset.price || 0);
-                let dayCard = button.parentElement.parentElement;
-                let slots = dayCard.querySelectorAll(".bg-green-50");
-                let proposedTotal = 0;
-
-                for (let slot of slots)
-                {
-                    let price = Number(slot.querySelector("p").dataset.price || 0);
-                    proposedTotal = proposedTotal + price;
-                }
-
-                proposedTotal = proposedTotal - oldPrice + selectedPrice;
-
-                if (proposedTotal > 50)
-                {
-                    alert("Your daily budget cannot exceed 50 DH!");
-                    return;
-                }
-
-                selectedParagraph.textContent = urchoice + " - " + selectedPrice + " DH";
-                selectedParagraph.dataset.price = selectedPrice;
-                dailyBudget.textContent = proposedTotal + " / 50 DH";
-                popup.classList.add("hidden");
-            });
-        }
+        openPopup(button, document.querySelector("#plat-raissi"), "Plat principal");
     });
 }
 
-
-closingButton.addEventListener("click", function()
+for (let button of document.querySelectorAll(".dessertbutton"))
 {
-    popup.classList.add("hidden");
-});
+    button.addEventListener("click", function()
+    {
+        openPopup(button, document.querySelector("#dissir"), "Dessert");
+    });
+}
 
-recipebutton.addEventListener("click", function()
+close.addEventListener("click", function()
 {
-    console.log("moroccan soup selected")
     popup.classList.add("hidden");
 });
