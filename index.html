@@ -6,7 +6,7 @@
     <title>YouCode Cantina</title>
     <link href="./output.css" rel="stylesheet">
 </head>
-
+ 
 <body class="bg-green-50 text-gray-800">
     <header class="p-4 flex items-center justify-between bg-white border-b border-gray-200">
         <h1 class="text-3xl font-bold text-green-800">YouCode Cantina</h1>
@@ -34,7 +34,7 @@
         <section class="mb-8">
             <h2 class="text-xl font-bold text-green-900">Recipe Bank</h2>
             <p class="mt-1 text-sm text-gray-600 mb-6">Explore recipes for your weekly menu.</p>
-            <div id="new-meal-popup" class="hidden lg:block bg-white border border-green-200 rounded-xl p-5 shadow-sm mt-8">
+            <div id="new-meal-popup" class="hidden lg:block bg-white border border-green-200 rounded-xl p-5 shadow-sm mt-8 flex flex-wrap items-center gap-3">
                 <input id="meal-name" type="text" placeholder="Meal name">
 
             <select id="meal-category">
@@ -44,9 +44,7 @@
             </select>
 
         <input id="meal-price" type="number" placeholder="Price in DH">
-
-            <button id="save-meal">Add Meal</button>
-            <button id="close-meal-popup">Cancel</button>
+            <button id="save-meal" class="ml-auto p-3 bg-green-700 text-white rounded-lg">Add Meal</button>
         </div>
             <div class="flex gap-3 mt-4">
                 <button class="px-4 py-2 bg-green-700 text-white rounded-lg">
