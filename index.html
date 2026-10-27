@@ -33,7 +33,21 @@
 
         <section class="mb-8">
             <h2 class="text-xl font-bold text-green-900">Recipe Bank</h2>
-            <p class="mt-1 text-sm text-gray-600">Explore recipes for your weekly menu.</p> 
+            <p class="mt-1 text-sm text-gray-600 mb-6">Explore recipes for your weekly menu.</p>
+            <div id="new-meal-popup" class="hidden lg:block bg-white border border-green-200 rounded-xl p-5 shadow-sm mt-8">
+                <input id="meal-name" type="text" placeholder="Meal name">
+
+            <select id="meal-category">
+                <option value="entree-recipes">Entrée</option>
+                <option value="plat-raissi">Plat principal</option>
+                <option value="dissir">Dessert</option>
+            </select>
+
+        <input id="meal-price" type="number" placeholder="Price in DH">
+
+            <button id="save-meal">Add Meal</button>
+            <button id="close-meal-popup">Cancel</button>
+        </div>
             <div class="flex gap-3 mt-4">
                 <button class="px-4 py-2 bg-green-700 text-white rounded-lg">
                     Entrée
@@ -159,7 +173,12 @@
             </p>
 
             <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
-                <h3 class="text-lg font-bold text-green-900">Lundi</h3>
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-green-900">Lundi</h3>
+                    <h5 class="text-2xl font-medium text-green-700">
+                        <span class="daily-counter">0</span> / 50 dh
+                    </h5>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                     <div class="bg-green-50 border border-green-100 rounded-lg p-3">
                         <h4 class="font-semibold text-green-800">Entrée</h4>
@@ -186,7 +205,12 @@
             </div>
         
             <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
-                <h3 class="text-lg font-bold text-green-900">Mardi</h3>
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-green-900">Mardi</h3>
+                    <h5 class="text-2xl font-medium text-green-700">
+                        <span class="daily-counter">0</span> / 50 dh
+                    </h5>
+            </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                     <div class="bg-green-50 border border-green-100 rounded-lg p-3">
                         <h4 class="font-semibold text-green-800">Entrée</h4>
@@ -213,7 +237,12 @@
             </div>
 
             <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
-                <h3 class="text-lg font-bold text-green-900">Mercredi</h3>
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-green-900">Mercredi</h3>
+                    <h5 class="text-2xl font-medium text-green-700">
+                        <span class="daily-counter">0</span> / 50 dh
+                    </h5>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                     <div class="bg-green-50 border border-green-100 rounded-lg p-3">
                         <h4 class="font-semibold text-green-800">Entrée</h4>
@@ -240,7 +269,12 @@
             </div>
 
             <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
-                <h3 class="text-lg font-bold text-green-900">Jeudi</h3>
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-green-900">Jeudi</h3>
+                    <h5 class="text-2xl font-medium text-green-700">
+                        <span class="daily-counter">0</span> / 50 dh
+                    </h5>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                     <div class="bg-green-50 border border-green-100 rounded-lg p-3">
                         <h4 class="font-semibold text-green-800">Entrée</h4>
@@ -267,7 +301,12 @@
             </div>
 
             <div class="bg-white border border-green-100 rounded-xl p-4 mb-4">
-                <h3 class="text-lg font-bold text-green-900">Vendredi</h3>
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-green-900">Vendredi</h3>
+                    <h5 class="text-2xl font-medium text-green-700">
+                        <span class="daily-counter">0</span> / 50 dh
+                    </h5>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                     <div class="bg-green-50 border border-green-100 rounded-lg p-3">
                         <h4 class="font-semibold text-green-800">Entrée</h4>

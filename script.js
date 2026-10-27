@@ -30,6 +30,7 @@ function openPopup(button, bank, category)
             let slot = button.parentElement;
             let selected = slot.querySelector("p");
             let day = slot.parentElement.parentElement;
+            let dailyCounter = day.querySelector(".daily-counter");
             let total = 0;
             
             for (let box of day.querySelectorAll(".bg-green-50"))
@@ -59,6 +60,7 @@ function openPopup(button, bank, category)
 
             selected.textContent = name + " - " + price + " DH";
             selected.dataset.price = price;
+            dailyCounter.textContent = total
             weeklybudhet.textContent = weeklytotal + " / 250 dh"
             popup.classList.add("hidden");
         });
