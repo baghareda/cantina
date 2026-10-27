@@ -67,6 +67,8 @@ function openPopup(button, bank, category)
     }
 }
 
+// func to selct each part of the meal without repeating the work
+
 for (let button of document.querySelectorAll(".entree-button"))
 {
     button.addEventListener("click", function()
